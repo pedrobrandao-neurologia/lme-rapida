@@ -90,12 +90,18 @@
             padding: 1mm 2mm 1.5mm 2mm;
         }
         .lme-header .sus-logo {
-            width: 18mm;
-            height: 12mm;
+            width: 26mm;
+            height: 16mm;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+        }
+        .lme-header .sus-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            display: block;
         }
         .lme-header .institutional {
             font-size: 8pt;
@@ -104,29 +110,42 @@
         }
         .lme-header .institutional p { margin: 0; }
 
-        /* Barras de título (fundo preto, texto branco) */
+        /* Barras de título */
         .lme-title-bar {
-            background: #000;
-            color: #fff;
             font-weight: bold;
             text-align: center;
             padding: 1mm 0;
             font-size: 9pt;
             letter-spacing: 0.01em;
             margin: 0;
+            border: 0;
         }
-        .lme-title-bar.thick { font-size: 9.5pt; padding: 1.2mm 0; }
-
-        /* Sub-barra de seção (cinza escuro) */
-        .lme-section-bar {
-            background: #4a4a4a;
+        /* 1) COMPONENTE ESPECIALIZADO — fundo preto, texto branco */
+        .lme-title-1 {
+            background: #000;
             color: #fff;
+        }
+        /* 2) LAUDO DE SOLICITAÇÃO — degradê cinza (escuro->claro), texto preto */
+        .lme-title-2 {
+            background: linear-gradient(to bottom, #6e6e6e 0%, #c8c8c8 60%, #e8e8e8 100%);
+            color: #000;
+        }
+        /* 3) SOLICITAÇÃO DE MEDICAMENTO(S) — fundo branco, texto preto */
+        .lme-title-3 {
+            background: #fff;
+            color: #000;
+        }
+
+        /* Sub-barra de seção: fundo branco, texto preto, borda preta 1pt */
+        .lme-section-bar {
+            background: #fff;
+            color: #000;
             font-weight: bold;
             text-align: center;
             padding: 1mm 0;
             font-size: 8pt;
             margin: 0;
-            border-bottom: 1px solid #000;
+            border: 1pt solid #000;
         }
 
         /* Box de campo (fieldset visual) */
@@ -397,17 +416,9 @@
             } catch { return fallback; }
         };
 
-        // ========= LOGO SUS (SVG inline, fiel ao oficial) =========
+        // ========= LOGO SUS (imagem oficial logosus.png) =========
         const SusLogo = () => (
-            <svg viewBox="0 0 467 297" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-                <g fill="#1f3a93">
-                    <text x="0" y="215" fontFamily="Arial Black, Arial, Helvetica, sans-serif" fontWeight="900" fontSize="220" letterSpacing="-4">SUS</text>
-                    <rect x="335" y="0" width="78" height="297"/>
-                    <rect x="260" y="105" width="207" height="78"/>
-                    <polygon points="335,105 260,140 260,150 335,183" fill="#ffffff"/>
-                    <polygon points="335,135 290,148 335,165" fill="#1f3a93"/>
-                </g>
-            </svg>
+            <img src="logosus.png" alt="SUS" />
         );
 
         // ========= COMPONENTE: CHECKBOX VISUAL =========
@@ -529,13 +540,11 @@
                     </div>
 
                     {/* Barras de título */}
-                    <div className="lme-title-bar thick">COMPONENTE ESPECIALIZADO DA ASSISTÊNCIA FARMACÊUTICA</div>
-                    <div style={{ height: '1mm' }}></div>
-                    <div className="lme-title-bar">LAUDO DE SOLICITAÇÃO, AVALIAÇÃO E AUTORIZAÇÃO DE MEDICAMENTO(S)</div>
-                    <div style={{ height: '1mm' }}></div>
-                    <div className="lme-title-bar" style={{ fontSize: '10pt' }}>SOLICITAÇÃO DE MEDICAMENTO(S)</div>
+                    <div className="lme-title-bar lme-title-1">COMPONENTE ESPECIALIZADO DA ASSISTÊNCIA FARMACÊUTICA</div>
+                    <div className="lme-title-bar lme-title-2">LAUDO DE SOLICITAÇÃO, AVALIAÇÃO E AUTORIZAÇÃO DE MEDICAMENTO(S)</div>
+                    <div className="lme-title-bar lme-title-3">SOLICITAÇÃO DE MEDICAMENTO(S)</div>
 
-                    {/* Sub-barra */}
+                    {/* Sub-barra: fundo branco, texto preto, borda preta 1pt */}
                     <div className="lme-section-bar" style={{ marginTop: '1mm' }}>
                         CAMPOS DE PREENCHIMENTO EXCLUSIVO PELO MÉDICO SOLICITANTE
                     </div>
