@@ -70,7 +70,7 @@
             min-height: 297mm;
             max-height: 297mm;
             background: white;
-            padding: 5mm 6mm;
+            padding: 4mm 6mm;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
             margin: 0 auto 2rem auto;
             font-family: Arial, Helvetica, sans-serif;
@@ -114,7 +114,7 @@
         .lme-title-bar {
             font-weight: bold;
             text-align: center;
-            padding: 1mm 0;
+            padding: 1.3mm 0;
             font-size: 9pt;
             letter-spacing: 0.01em;
             margin: 0;
@@ -142,7 +142,7 @@
             color: #000;
             font-weight: bold;
             text-align: center;
-            padding: 1mm 0;
+            padding: 1.3mm 0;
             font-size: 8pt;
             margin: 0;
             border: 1pt solid #000;
@@ -152,10 +152,10 @@
         .lme-field {
             border: 1px solid #000;
             border-radius: 2.2mm;
-            padding: 2.2mm 2mm 1.3mm 2mm;
+            padding: 2.6mm 2.4mm 1.8mm 2.4mm;
             position: relative;
             background: #eef4fb;
-            min-height: 7mm;
+            min-height: 8mm;
         }
         .lme-field-label {
             position: absolute;
@@ -171,7 +171,7 @@
 
         .lme-field-value {
             font-size: 8.5pt;
-            min-height: 3.5mm;
+            min-height: 4mm;
             color: #000;
             white-space: pre-wrap;
             word-wrap: break-word;
@@ -180,8 +180,8 @@
         /* Linhas de campos (grid) */
         .lme-row {
             display: grid;
-            gap: 1.2mm;
-            margin-top: 1.2mm;
+            gap: 1.6mm;
+            margin-top: 1.6mm;
         }
 
         /* Tabela de medicamentos (campos 7+8) */
@@ -197,7 +197,7 @@
         }
         .lme-meds-table th, .lme-meds-table td {
             border: 1px solid #000;
-            padding: 0.5mm 1mm;
+            padding: 0.8mm 1.2mm;
             vertical-align: middle;
         }
         .lme-meds-table th {
@@ -209,7 +209,7 @@
         .lme-meds-table .col-num { width: 5mm; text-align: center; font-weight: bold; }
         .lme-meds-table .col-med { text-align: left; }
         .lme-meds-table .col-qty { width: 16mm; text-align: center; }
-        .lme-meds-table tbody tr { height: 6mm; }
+        .lme-meds-table tbody tr { height: 6.5mm; }
 
         /* Checkbox visual (quadradinho) */
         .lme-cb {
@@ -260,7 +260,7 @@
         }
 
         /* Espaços entre seções */
-        .lme-section + .lme-section { margin-top: 1.2mm; }
+        .lme-section + .lme-section { margin-top: 1.6mm; }
 
         /* =========================================================
            IMPRESSÃO: o preview JÁ É o que vai ser impresso
@@ -628,7 +628,7 @@
 
                     {/* Anamnese */}
                     <div className="lme-row" style={{ gridTemplateColumns: '1fr' }}>
-                        <Field num="11" label="Anamnese" required style={{ minHeight: '22mm' }}>
+                        <Field num="11" label="Anamnese" style={{ minHeight: '20mm' }}>
                             {data.anamnese || ' '}
                         </Field>
                     </div>
@@ -674,7 +674,7 @@
                                 </Field>
                             </div>
                         </div>
-                        <Field num="17" label="Assinatura e carimbo do médico" style={{ minHeight: '24mm' }}>
+                        <Field num="17" label="Assinatura e carimbo do médico" style={{ minHeight: '22mm' }}>
                             {' '}
                         </Field>
                     </div>
